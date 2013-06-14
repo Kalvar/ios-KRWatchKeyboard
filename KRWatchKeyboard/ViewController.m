@@ -85,8 +85,12 @@
 }
 
 #pragma UIViewDelegate
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.outTextView resignFirstResponder];
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if( self.outTextView.resignFirstResponder )
+    {
+        [self.outTextView resignFirstResponder];
+    }
     [super touchesBegan:touches withEvent:event];
 }
 
